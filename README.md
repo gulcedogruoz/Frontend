@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 💬 AI Agent Chat UI – Frontend (Next.js)
 
-First, run the development server:
+This is a simple frontend chat interface built with **Next.js (App Router)** that communicates with a backend AI Agent via REST API. It allows users to type natural language messages related to airline operations (flight search, ticket purchase, check-in), which are analyzed by a language model and routed to the appropriate backend services.
+
+## 🧱 Tech Stack
+
+- ⚡️ [Next.js 13+ (App Router)](https://nextjs.org/)
+- 🎨 Tailwind CSS (for styling)
+- 🌐 REST API integration with `.fetch()`
+- 🧠 Works with Claude 3 LLM via backend
+- 💬 Minimal chat UI
+
+## 📁 Project Structure
+
+| File           | Description                                           |
+|----------------|-------------------------------------------------------|
+| `page.tsx`     | Main chat interface (message input/output & logic)    |
+| `layout.tsx`   | Global layout with fonts and styles                   |
+| `globals.css`  | Tailwind and global styles                            |
+
+## 🚀 How It Works
+
+1. User types a message like:  
+   `"I want to book a flight to Paris on July 10"`
+
+2. Frontend sends POST request to the backend endpoint:  
+   `http://localhost:5050/api/aia​gent/analyze`
+
+3. Backend (Claude LLM + Gateway) responds with structured JSON
+
+4. Response is rendered in the chat window as "Agent" reply
+
+## 📦 Installation & Running Locally
+
+### Requirements
+- Node.js 18+
+- npm or yarn
+
+### Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/ai-agent-frontend
+
+cd ai-agent-frontend
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```ts
+const res = await fetch('http://localhost:5050/api/aia​gent/analyze', { ... })
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If your backend runs on a different host/port, **update the URL** accordingly.
 
-## Learn More
+## 📝 Notes
 
-To learn more about Next.js, take a look at the following resources:
+- The chat scroll area is fixed height with vertical scroll
+- Basic error handling is included
+- Uses Tailwind for quick responsive layout
+- `Enter` key sends messages too
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📹 Demo Video
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[▶️ Watch Frontend Demo](https://your-video-link.com)
 
-## Deploy on Vercel
+## 👥 Authors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Developed by **Gulce DOGRUOZ** – SE4458 Assignment 2
