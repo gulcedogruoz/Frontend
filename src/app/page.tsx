@@ -37,10 +37,7 @@ export default function Home() {
 
       const data = await res.json()
 
-      // const formatted =
-      //   `🧠 Intent: ${data.intent}\n` +
-      //   `📦 Parameters: ${JSON.stringify(data.parameters, null, 2)}\n` +
-      //   `🔁 API Response: ${data.response || 'None'}`
+      
       const agentMsg: Message = {
         role: 'agent',
         content: data && "UÇUŞ BULUNAMADI"
