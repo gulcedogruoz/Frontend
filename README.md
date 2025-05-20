@@ -68,7 +68,7 @@ If your backend runs on a different host/port, **update the URL** accordingly.
 
 ## 📹 Demo Video
 
-[▶️ Watch Frontend Demo](https://your-video-link.com)
+[▶️ Watch Frontend Demo](https://youtu.be/j5mACjZvCzA)
 
 ## 👥 Authors
 
